@@ -18,7 +18,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { routes } from './routes';
 import { HomeComponent } from './home/home.component';
 import { HubCreateComponent } from './hub-create/hub-create.component';
-import { MyProfileComponent } from './my-profile/my-profile.component'
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { PeopleComponent } from './people/people.component';
+import { HubsComponent } from './hubs/hubs.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MyProfileComponent } from './my-profile/my-profile.component'
     NavbarComponent,
     HomeComponent,
     HubCreateComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    PeopleComponent,
+    HubsComponent
   ],
   imports: [
     BrowserModule,

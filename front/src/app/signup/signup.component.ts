@@ -9,9 +9,10 @@ import { ServerLinkService } from '../../services/server-link.service'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  user = ''
+  user:any = {}
 
   getForm(signupForm){
+    signupForm.value.hobbies = signupForm.value.hobbies.split(' ');
     this.backService.signUp(signupForm)
     .subscribe(user=>{
       this.user = user;

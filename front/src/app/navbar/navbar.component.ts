@@ -12,21 +12,16 @@ export class NavbarComponent implements OnInit {
   user = '';
 
   constructor(
-    private serverService: ServerLinkService,
+    private backService: ServerLinkService,
     private router: Router,
   ) { }
 
   ngOnInit() {
-  this.getUser()
-  }
-
-
-  getUser(){
-    this.user = JSON.parse(localStorage.getItem('user'))
+  this.user = this.backService.getLocalUser()
   }
 
   logout(){
-    this.serverService.logout();
+    this.backService.logout();
     this.router.navigate(['']);
     window.location.reload()
   }

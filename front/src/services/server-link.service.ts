@@ -14,7 +14,7 @@ export class ServerLinkService {
   constructor(private http:Http) { }
 
   logIn(loginForm){
-    return this.http.post(this.url + 'login', loginForm)
+    return this.http.post(this.url + 'login', loginForm, {withCredentials:true})
     .pipe(map((res:Response)=>res.json()))
   }
 
@@ -26,4 +26,24 @@ export class ServerLinkService {
   logout(){
     localStorage.removeItem('user');
   }
+
+  newHub(hubForm){
+    return this.http.post(this.url + 'newHub', hubForm, {withCredentials:true})
+    .pipe(map((res:Response)=>res.json()))
+  }
+
+  getLocalUser(){
+    return JSON.parse(localStorage.getItem('user'))
+  }
+
+  getAllUsers(){
+    return this.http.get(this.url + 'people')
+    .pipe(map((res:Response)=>res.json()))
+  }
+
+  getAllHubs(){
+    return this.http.get(this.url + 'hubs')
+    .pipe(map((res:Response)=>res.json()))
+  }
+
 }

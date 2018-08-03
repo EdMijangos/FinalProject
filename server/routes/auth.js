@@ -32,29 +32,4 @@ router.post('/signup', (req,res,next)=>{
   .catch(err=>res.send(err))
 })
 
-router.post('/newHub', isAuthenticated, (req,res,next)=>{
-  //req.body.owner = req.user._id;      //PODRIA FALLAR
-  Hub.create(req.body)
-  .then(hub=>{
-    res.json(hub)
-  })
-  .catch(err=>res.json(err))
-})
-
-router.get('/myProfile', isAuthenticated, (req,res,next)=>{
-  User.findById(req.user._id)
-  .then(user=>{
-    res.json(user)
-  })
-  .catch(err=>res.json(err))
-})
-
-router.get('/profile/:id', (req,res,next)=>{
-  User.findById(req.params.id)
-  .then(user=>{
-    res.json(user)
-  })
-  .catch(err=>res.json(err))
-})
-
 module.exports = router;

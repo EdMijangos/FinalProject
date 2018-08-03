@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ServerLinkService } from '../../services/server-link.service'
 
 @Component({
   selector: 'app-my-profile',
@@ -6,17 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-profile.component.css']
 })
 export class MyProfileComponent implements OnInit {
-  user: '';
+  user:any;
   photo: any
 
-  constructor() { }
+  constructor(
+    private router:Router,
+    private backService:ServerLinkService,
+  ) { }
 
   ngOnInit() {
-    this.getUser()
-  }
-
-  getUser(){
-    this.user = JSON.parse(localStorage.getItem('user'))
+    this.user = this.backService.getLocalUser()
+    if(!this.user){
+      this.router.navigate(['login']);
+    }
   }
 
   getPhoto(e){

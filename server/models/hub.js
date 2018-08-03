@@ -1,6 +1,7 @@
 const Schema = require('mongoose').Schema;
+
 const hubSchema = new Schema({
-  name:{
+  title:{
     type:String,
     required:true,
   },
@@ -9,14 +10,17 @@ const hubSchema = new Schema({
     ref: 'user',
     required:true
   },
-  numberParticipants:Number,
+  numberParticipants:{
+    type:Number,
+    default:2
+  },
   participants:[
     {
       type:Schema.Types.ObjectId,
       ref: 'user',
     }
   ],
-  hobbyType:{
+  category:{
     type:String,
     required:true,
   },
@@ -26,9 +30,14 @@ const hubSchema = new Schema({
     type:String,
     default:'Now'
   },
-  comments:[String],
+  comments:[{
+    type:Schema.Types.ObjectId,
+    ref: 'comment'
+  }],
   status:{
-    enum:['open', 'closed']
+    type:String,
+    enum:['open', 'closed'],
+    default: 'open'
   },
 },{
   timestamps:{

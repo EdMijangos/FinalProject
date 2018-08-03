@@ -1,8 +1,9 @@
 <section>
-  <p>
-    Discover People
-  </p>
-  <p>
-    Join a Hub
-  </p>  
+
+  <a [routerLink]="['people']"><button>Discover People</button></a>
+
+  <a [routerLink]="['hubs']"><button>Join a Hub</button></a>  
+
 </section>
+
+<router-outlet></router-outlet>
