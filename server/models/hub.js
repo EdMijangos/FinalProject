@@ -26,7 +26,10 @@ const hubSchema = new Schema({
     type:String,
     default:'Now'
   },
-  comments:String,
+  comments:[String],
+  status:{
+    enum:['open', 'closed']
+  },
 },{
   timestamps:{
       createdAt: 'created_at',

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerLinkService } from '../../services/server-link.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,14 +9,23 @@ import { ServerLinkService } from '../../services/server-link.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user = ''
+  loginInput = {
+    email: '',
+    password: ''
+  }
 
-  constructor(private backService:ServerLinkService) { }
+
+  constructor(
+    private backService:ServerLinkService,
+    private router:Router,
+  ) { }
 
   getInput(loginForm){
     this.backService.logIn(loginForm)
     .subscribe(user=>{
-      this.user = user
+      localStorage.setItem('user', JSON.stringify(user))
+      this.router.navigate(['']);
+      window.location.reload()
     })
   }
   

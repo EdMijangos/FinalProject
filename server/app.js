@@ -31,7 +31,10 @@ const app = express();
 //passport setup
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cors())
+app.use(cors({
+  origin:true,
+  credentials:true
+}));
 
 //session setup
 app.use(session({

@@ -1,0 +1,22 @@
+<section>
+  <div style="display:none;" id="form">
+    <input type="file" (change)="getPhoto($event)">
+  </div>
+
+  <img src="{{user.photoURL}}" alt="profile pic">
+  <p>{{user.username}}</p>
+  <p>{{user.points}}</p>
+  <ul>
+    <p>Your hobbies:</p>
+    <li *ngFor="let hobby of user.hobbies">{{hobby}}</li>
+  </ul>
+  <ul>
+    <p>Your friends:</p>
+    <li *ngFor="let friend of user.friendList">{{friend}}</li>
+  </ul>
+  <ul>
+    <p>Your hubs:</p>
+    <li *ngFor="let hub of user.hubs">{{hub}}</li>
+  </ul>
+</section>
+

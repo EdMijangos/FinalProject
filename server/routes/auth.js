@@ -32,7 +32,7 @@ router.post('/signup', (req,res,next)=>{
   .catch(err=>res.send(err))
 })
 
-router.post('/newHub', (req,res,next)=>{
+router.post('/newHub', isAuthenticated, (req,res,next)=>{
   //req.body.owner = req.user._id;      //PODRIA FALLAR
   Hub.create(req.body)
   .then(hub=>{
@@ -41,7 +41,7 @@ router.post('/newHub', (req,res,next)=>{
   .catch(err=>res.json(err))
 })
 
-router.get('/myProfile', (req,res,next)=>{
+router.get('/myProfile', isAuthenticated, (req,res,next)=>{
   User.findById(req.user._id)
   .then(user=>{
     res.json(user)

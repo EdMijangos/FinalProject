@@ -1,3 +1,8 @@
-<p>
-  login works!
-</p>
+<section>
+  <div>
+    <input type="text" placeholder="Your email" [(ngModel)]="loginInput.email">
+    <br>
+    <input type="password" placeholder="Your password" [(ngModel)]="loginInput.password">
+    <input type="submit" (click)="getInput(loginInput)">
+  </div>
+</section>

@@ -14,7 +14,7 @@ export class ServerLinkService {
   constructor(private http:Http) { }
 
   logIn(loginForm){
-    return this.http.post(this.url + 'login', loginForm.value)
+    return this.http.post(this.url + 'login', loginForm)
     .pipe(map((res:Response)=>res.json()))
   }
 
@@ -23,4 +23,7 @@ export class ServerLinkService {
     .pipe(map((res:Response)=>res.json()))
   }
 
+  logout(){
+    localStorage.removeItem('user');
+  }
 }
