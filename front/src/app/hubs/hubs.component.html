@@ -1,7 +1,11 @@
-<section *ngFor="let hub of hubs">
-    
-    <p>{{hub.title}}</p>
-    <p>{{hub.owner}}</p>
-    <p>{{hub.catergory}}</p>
-    <p>{{hub.numberParticipants}}</p>
-  </section>
+<section>
+  <div *ngFor="let hub of hubs">
+    <a [routerLink]="[hub._id]">
+      <p>{{hub.title}}</p>
+      <p>{{hub.catergory}}</p>
+      <p>{{hub.owner}}</p>
+      <p>{{hub.numberParticipants}}</p>
+      <p>{{hub.date}}</p>
+    </a>
+  </div>
+</section>

@@ -1,10 +1,14 @@
 
-<section *ngFor="let user of users">
-  <img src="{{user.photoURL}}" alt="profile pic">
-  <p>{{user.username}}</p>
-  <p>{{user.points}}</p>
-  <ul>
-    <p>Your hobbies:</p>
-    <li *ngFor="let hobby of user.hobbies">{{hobby}}</li>
-  </ul>
+<section>
+  <div *ngFor="let user of users">
+    <a [routerLink]="[user._id]">
+      <img src="{{user.photoURL}}" alt="profile pic">
+      <p>{{user.username}}</p>
+      <p>{{user.points}}</p>
+      <ul>
+        <p>{{user.username}}'s hobbies:</p>
+        <li *ngFor="let hobby of user.hobbies">{{hobby}}</li>
+      </ul>
+    </a>
+  </div>
 </section>

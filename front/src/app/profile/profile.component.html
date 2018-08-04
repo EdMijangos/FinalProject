@@ -1,0 +1,11 @@
+<section>
+    <img src="{{user.photoURL}}" alt="profile pic">
+    <p>{{user.username}}</p>
+    <p>{{user.points}}</p>
+    <ul>
+      <p>{{user.username}}'s hobbies:</p>
+      <li *ngFor="let hobby of user.hobbies">{{hobby}}</li>
+    </ul>
+    <button>Add to Friend List</button> <!-- por el momento no hace nada -->
+</section>
+

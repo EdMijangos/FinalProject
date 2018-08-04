@@ -46,4 +46,14 @@ export class ServerLinkService {
     .pipe(map((res:Response)=>res.json()))
   }
 
+  getSingleUser(id){
+    return this.http.get(this.url + 'people/' + id)
+    .pipe(map((res:Response)=>res.json()))
+  }
+
+  getSingleHub(id){
+    return this.http.get(this.url + 'hubs/' + id)
+    .pipe(map((res:Response)=>res.json()))
+  }
+
 }

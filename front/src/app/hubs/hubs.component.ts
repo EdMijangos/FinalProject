@@ -14,7 +14,7 @@ export class HubsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.backService.getAllUsers()
+    this.backService.getAllHubs()
     .subscribe(hubs=>{
       this.hubs = hubs
     })

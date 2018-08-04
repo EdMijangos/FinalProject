@@ -20,7 +20,9 @@ import { HomeComponent } from './home/home.component';
 import { HubCreateComponent } from './hub-create/hub-create.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { PeopleComponent } from './people/people.component';
-import { HubsComponent } from './hubs/hubs.component'
+import { HubsComponent } from './hubs/hubs.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HubComponent } from './hub/hub.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { HubsComponent } from './hubs/hubs.component'
     HubCreateComponent,
     MyProfileComponent,
     PeopleComponent,
-    HubsComponent
+    HubsComponent,
+    ProfileComponent,
+    HubComponent
   ],
   imports: [
     BrowserModule,

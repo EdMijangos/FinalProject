@@ -24,8 +24,14 @@ const hubSchema = new Schema({
     type:String,
     required:true,
   },
-  description:String,
-  location:String,
+  description:{
+    type:String,
+    default:'Nothing here!'
+  },
+  location:{
+    type:String,
+    default:'Nothing here!'
+  },
   date:{
     type:String,
     default:'Now'

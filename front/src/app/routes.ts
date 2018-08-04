@@ -10,15 +10,19 @@ import { HubCreateComponent } from './hub-create/hub-create.component'
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { PeopleComponent } from './people/people.component';
 import { HubsComponent } from './hubs/hubs.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HubComponent } from './hub/hub.component';
 
 //paths
 export const routes: Routes = [
-  {path:'', component:HomeComponent},
+  {path:'', component:HomeComponent, pathMatch:'full'},
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
   {path:'newHub', component:HubCreateComponent},
   {path:'myProfile', component:MyProfileComponent},
-  {path:'people', component:PeopleComponent},
+  {path:'people', component: PeopleComponent},
+  {path:'people/:id', component:ProfileComponent},
   {path:'hubs', component:HubsComponent},
+  {path:'hubs/:id', component:HubComponent}
 
 ]
