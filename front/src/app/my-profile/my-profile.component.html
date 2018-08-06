@@ -1,22 +1,69 @@
 <section>
+  <!--Form invisible para el cambio de foto-->
   <div style="display:none;" id="form">
     <input type="file" (change)="getPhoto($event)">
   </div>
 
-  <img src="{{user.photoURL}}" alt="profile pic">
-  <p>{{user.username}}</p>
-  <p>{{user.points}}</p>
-  <ul>
-    <p>Your hobbies:</p>
-    <li *ngFor="let hobby of user.hobbies">{{hobby}}</li>
-  </ul>
-  <ul>
-    <p>Your friends:</p>
-    <li *ngFor="let friend of user.friendList">{{friend}}</li>
-  </ul>
-  <ul>
-    <p>Your hubs:</p>
-    <li *ngFor="let hub of user.hubs">{{hub}}</li>
-  </ul>
+  <!-- Primera columna-->
+  <div class="container text-center">    
+    <div class="row">
+      <div class="col-sm-3 well">
+        <div class="well">
+          <p>{{user.username}}</p>
+          <img src="{{user.photoURL}}" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="well">
+          <p>Interests</p>
+          <p>
+            <span *ngFor="let hobby of user.hobbies" class="label label-primary">{{hobby}}</span>
+          </p>
+        </div>  
+      </div>
+
+      <!--Columna central-->
+      <div class="col-sm-7">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-default text-left">
+              <div class="panel-body">
+                <p class="text-center">This is your Friend List</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" *ngFor="let friend of user.friendList">
+          <div class="col-sm-3">
+            <div class="well">
+             <p>{{friend.username}}</p>
+             <img src="{{friend.photoURL}}" class="img-circle" width="40" alt="Avatar">
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="well">
+              <p *ngFor="let hobby of friend.hobbies">{{hobby}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Columna derecha-->
+      <div class="col-sm-2 well">
+        <div class="thumbnail">
+          <p>Hubs:</p>
+          <div *ngFor="let hub of user.hubs">
+            <p><strong>{{hub.title}}</strong></p>
+            <p>{{hub.date}}</p>
+            <p>{{hub.category}}</p>
+            <a [routerLink]="['hubs', hub._id]"></a> <button class="btn btn-primary">Info</button>
+          </div>
+        </div>      
+      </div>
+
+    </div>
+  </div>
 </section>
 
+
+
+  

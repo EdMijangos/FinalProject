@@ -1,17 +1,24 @@
 <section>
+  <div class="card">
     <div>
+      <p>Hub title:</p>
       <input type="text" placeholder="Title" [(ngModel)]="newHub.title">
       <br>
+      <p>Number of participants:</p>
       <input type="number" placeholder="Number of people" [(ngModel)]="newHub.numberParticipants">
       <br>
+      Category:
       <input type="text" placeholder="Category" [(ngModel)]="newHub.category">
       <br>
+      <p>Location:</p>
       <input type="text" placeholder="Location" [(ngModel)]="newHub.location">
       <br>
-      <input type="date" placeholder="Leave empty if it's for today" [(ngModel)]="newHub.date">
+      <p>Date - leave empty for value "Now":</p>
+      <input type="date" [(ngModel)]="newHub.date">
       <br>
       <textarea placeholder="Description" cols="30" rows="10" [(ngModel)]="newHub.description"></textarea>
       <br>
-      <input type="submit" (click)="makeHub(newHub)">
+      <input type="submit" (click)="makeHub(newHub)" id="btn">
     </div>
-  </section>
+  </div>
+</section>

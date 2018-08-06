@@ -1,7 +1,11 @@
-section{
-  margin-top: 20vh;
+.container{
+  padding: 18vh 5vw 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: url(https://res.cloudinary.com/irontest/image/upload/v1533575795/Hubster/bg-chess.jpg);
+  background-size:cover;
 }
 
-img{
-  width:20vw;
+span{
+  margin-right: 10px;
 }

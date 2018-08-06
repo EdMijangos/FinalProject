@@ -1,15 +1,14 @@
 nav{
   position:fixed;
   top: 0;
-  background-color: #FFF;
+  background-color: rgba(0, 0, 0, 0);
   width:100vw;
   height:12vh;
   padding:10px 30px;
   box-sizing: border-box;
-  color: #1A1A1A;
 }
 nav img{
-  width:5vw;
+  width:6vw;
   float:left;
   margin:0;
   padding:0;
@@ -25,9 +24,10 @@ nav li{
   margin: 0 20px;
   font-size: 1.2em;
   cursor: pointer;
+  color:white;
 }
 
 nav a{
   text-decoration: none;
-  color:black;
+  color: white;
 }

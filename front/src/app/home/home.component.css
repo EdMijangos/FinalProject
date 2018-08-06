@@ -1,3 +1,23 @@
-section{
-  margin-top: 20vh;
+button{
+  padding: 2vh 3vw;
+  border: none;
+  margin-right: 3vw;
+  cursor: pointer;
+  background-color: #F7882F;
+  color: white;
+  font-family:'Poppins', serif;
+}
+
+button:hover{
+  background-color: #da6608;
+}
+
+.containerHandmade{
+  width: (100vw-17px);
+  height: 100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://res.cloudinary.com/irontest/image/upload/v1533568191/Hubster/bg2.jpg);
+  background-size: cover;
 }

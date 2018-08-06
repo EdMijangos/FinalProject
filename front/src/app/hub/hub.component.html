@@ -1,10 +1,33 @@
 <section>
-  <h2>{{hub.title}}</h2>
-  <p>{{hub.category}}</p>
-  <p>{{hub.owner}}</p>
-  <p>{{hub.numberParticipants}}</p>
-  <p>{{hub.date}}</p>
-  <p>{{hub.location}}</p>
-  <p>{{hub.description}}</p>
-  <button>Join this hub</button> <!--Por el momento no hace nada-->
+<!--Columna derecha-->
+  <div class="container text-center">    
+    <div class="row">
+      <div class="col-sm-5 well">
+        <div class="well">
+          <h3>{{hub.title}}</h3>
+          <p>{{hub.owner}}</p>
+        </div>
+        <div class="well">
+          <p>Category</p>
+          <p>
+            <span class="label label-primary">{{hub.category}}</span>
+          </p>
+        </div>  
+      </div>
+      <!--Columna izq-->
+      <div class="col-sm-7">
+        <div class="panel panel-default text-left">
+          <div class="panel-body">
+            <p class="text-center">{{hub.description}}</p>
+            <p>Location: {{hub.location}}</p>
+            <p>
+              <span class="label label-primary">Participants: {{hub.numberParticipants}}</span>
+              <span class="label label-primary">{{hub.date}}</span>  
+            </p>
+            <button class="btn button-success">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
