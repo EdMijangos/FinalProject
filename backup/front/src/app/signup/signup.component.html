@@ -1,0 +1,31 @@
+<section>
+
+  <form #signupForm="ngForm" (ngSubmit)="getForm(signupForm)">
+    <div>
+      <p>Username:</p>
+      <input name="username" type="text" [(ngModel)]="username" placeholder="username">
+      <br>
+      <p>Email:</p>
+      <input name="email" type="email" placeholder="Tu correo" [(ngModel)]="email">
+      <br>
+      
+      <p>Password:</p>
+      <input #myPassword="ngModel" required name="password" type="password" placeholder="Tu password" [(ngModel)]="password">
+      <br>
+  
+      <input #myPass2="ngModel" required name="password2" type="password" placeholder="Tu password otra vez" [(ngModel)]="password2">
+      <div *ngIf="myPassword.value != myPass2.value">
+        <div>
+          Passwords don't match
+        </div>
+      </div>
+      <br>
+      <p>Hobbies:</p>
+      <input #myHobbies="ngModel" name="hobbies" type="text" placeholder="Tus hobbies (separados por commas)" [(ngModel)]="hobbies">
+      <br>
+  
+      <input type="submit" id="btn">
+    </div>
+  </form>
+
+</section>

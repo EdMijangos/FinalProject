@@ -22,7 +22,7 @@
             <div class="panel panel-default text-left">
               <div class="panel-body text-center">
                 <p>{{user.username}}'s' Friend List</p>
-                <button class="btn btn-primary">Add to your Friend List</button> <!--Por el momento no hace nada-->
+                <button class="btn btn-primary" *ngIf="localUser">Add to your Friend List</button> <!--Por el momento no hace nada-->
               </div>
             </div>
           </div>

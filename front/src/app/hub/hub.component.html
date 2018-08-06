@@ -5,7 +5,7 @@
       <div class="col-sm-5 well">
         <div class="well">
           <h3>{{hub.title}}</h3>
-          <p>{{hub.owner}}</p>
+          <p>by {{hub.owner.username}}</p>
         </div>
         <div class="well">
           <p>Category</p>
@@ -24,7 +24,7 @@
               <span class="label label-primary">Participants: {{hub.numberParticipants}}</span>
               <span class="label label-primary">{{hub.date}}</span>  
             </p>
-            <button class="btn button-success">Join</button>
+            <button class="btn button-success" *ngIf="user">Join</button>
           </div>
         </div>
       </div>

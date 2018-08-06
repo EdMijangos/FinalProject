@@ -51,11 +51,11 @@
       <div class="col-sm-2 well">
         <div class="thumbnail">
           <p>Hubs:</p>
-          <div *ngFor="let hub of user.hubs">
+          <div *ngFor="let hub of user.hubs" class="hubs">
             <p><strong>{{hub.title}}</strong></p>
-            <p>{{hub.date}}</p>
-            <p>{{hub.category}}</p>
-            <a [routerLink]="['hubs', hub._id]"></a> <button class="btn btn-primary">Info</button>
+            <p>Date: {{hub.date}}</p>
+            <p>Category: {{hub.category}}</p>
+            <a [routerLink]="['/hubs', hub._id]"><button class="btn btn-primary">Info</button></a> 
           </div>
         </div>      
       </div>

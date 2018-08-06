@@ -16,7 +16,7 @@ const userSchema = new Schema({
     hubs:[
       {
         type: Schema.Types.ObjectId,
-        ref: 'hub'
+        ref: 'Hub'
       }
     ],
     hobbies:[
@@ -31,7 +31,7 @@ const userSchema = new Schema({
     friendList: [
       {
         type:Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'User'
       }
     ]
   },{

@@ -9,7 +9,8 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class ProfileComponent implements OnInit {
   id = '';
-  user = {}
+  user = {} //el usuario del que se ve se profile
+  localUser:any //el usuario loggead
 
   constructor(
     private backService:ServerLinkService,
@@ -17,6 +18,8 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.localUser = this.backService.getLocalUser()
+
     //guarda el id del usuario clickeado
     this.activedRoute.params
     .subscribe(params=>{

@@ -21,16 +21,6 @@ function isLoggedIn(req,res,next){
 }
 
 
-router.get('/myProfile', isAuthenticated, (req,res,next)=>{
-  User.findById(req.user._id)
-  .populate(hubs)
-  .populate(friendList)
-  .then(user=>{
-    res.json(user)
-  })
-  .catch(err=>res.json(err))
-})
-
 router.get('/people', (req,res)=>{
   User.find()
   .then(users=>{
@@ -41,6 +31,8 @@ router.get('/people', (req,res)=>{
 
 router.get('/people/:id', (req,res,next)=>{
   User.findById(req.params.id)
+  .populate('hubs')
+  .populate('friendList')
   .then(user=>{
     res.json(user)
   })
@@ -52,7 +44,7 @@ router.post('/newHub', (req,res,next)=>{
   Hub.create(req.body)
   .then(newHub=>{
     hub = newHub;
-    User.findByIdAndUpdate(hub.owner, {$push:{hubs:hub}}, {new:true})
+    User.findByIdAndUpdate(hub.owner, {$push:{hubs:hub._id}}, {new:true})
     .catch(err=>res.json(err))
     res.json(newHub)
   })
@@ -62,6 +54,7 @@ router.post('/newHub', (req,res,next)=>{
 
 router.get('/hubs', (req,res)=>{
   Hub.find()
+  .populate('owner')
   .then(hubs=>{
     res.json(hubs)
   })
@@ -70,6 +63,9 @@ router.get('/hubs', (req,res)=>{
 
 router.get('/hubs/:id', (req,res,next)=>{
   Hub.findById(req.params.id)
+  .populate('owner')
+  .populate('participants')
+  //.populate('comments')
   .then(hub=>{
     res.json(hub)
   })

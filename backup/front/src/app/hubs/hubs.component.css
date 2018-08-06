@@ -1,0 +1,20 @@
+.container{
+  padding: 18vh 5vw 0;
+  width: 100vw; 
+  min-height: 100vh;
+  background-image: url(https://res.cloudinary.com/irontest/image/upload/v1533575795/Hubster/bg-chess.jpg);
+  background-size:cover;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+span{
+  margin-right: 10px;
+}
+
+.col-sm-3{
+  margin-right:50px;
+  box-sizing: border-box;
+}

@@ -27,7 +27,7 @@ export class HubCreateComponent implements OnInit {
     hubForm.owner = this.user._id;
     this.backService.newHub(hubForm)
     .subscribe(userUpdated=>{
-      return userUpdated
+      this.router.navigate(['']);
     })
   }
 

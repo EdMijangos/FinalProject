@@ -1,0 +1,13 @@
+<section>
+  <div class="card">
+    <div>
+      <p>Email:</p>
+      <input type="text" placeholder="Your email" [(ngModel)]="loginInput.email">
+      <br>
+      <p>Password:</p>
+      <input type="password" placeholder="Your password" [(ngModel)]="loginInput.password">
+      <input type="submit" (click)="getInput(loginInput)" id="btn">
+    </div>
+  </div>
+</section>
+

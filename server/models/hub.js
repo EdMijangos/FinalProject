@@ -7,7 +7,7 @@ const hubSchema = new Schema({
   },
   owner:{
     type:Schema.Types.ObjectId,
-    ref: 'user',
+    ref: 'User',
     required:true
   },
   numberParticipants:{
@@ -17,7 +17,7 @@ const hubSchema = new Schema({
   participants:[
     {
       type:Schema.Types.ObjectId,
-      ref: 'user',
+      ref: 'User',
     }
   ],
   category:{
@@ -38,7 +38,7 @@ const hubSchema = new Schema({
   },
   comments:[{
     type:Schema.Types.ObjectId,
-    ref: 'comment'
+    ref: 'Comment'
   }],
   status:{
     type:String,

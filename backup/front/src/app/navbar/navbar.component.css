@@ -1,0 +1,33 @@
+nav{
+  position:fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0);
+  width:100vw;
+  height:12vh;
+  padding:10px 30px;
+  box-sizing: border-box;
+}
+nav img{
+  width:6vw;
+  float:left;
+  margin:0;
+  padding:0;
+}
+nav ul{
+  list-style: none;
+  float:right;
+  margin:0;
+  padding:20px 0px;
+}
+nav li{
+  display: inline;
+  margin: 0 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  color:white;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+}

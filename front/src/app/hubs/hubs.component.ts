@@ -8,6 +8,7 @@ import { ServerLinkService } from '../../services/server-link.service';
 })
 export class HubsComponent implements OnInit {
   hubs = []
+  user:any
 
   constructor(
     private backService:ServerLinkService,
@@ -17,6 +18,8 @@ export class HubsComponent implements OnInit {
     this.backService.getAllHubs()
     .subscribe(hubs=>{
       this.hubs = hubs
+
+    this.user = this.backService.getLocalUser();
     })
     
   }
