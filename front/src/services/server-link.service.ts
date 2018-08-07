@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class ServerLinkService {
-  url = 'http://localhost:3000/';
+  url = '/';
   user = {}
 
   constructor(private http:Http) { }

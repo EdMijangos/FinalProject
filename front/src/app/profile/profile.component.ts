@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class ProfileComponent implements OnInit {
   id = ''; //id del usuario del que se ve su profile
-  user = {} //el usuario del que se ve su profile
+  user:any //el usuario del que se ve su profile
   localUser:any //el usuario loggeado
   isNotFriend:boolean = true
 
