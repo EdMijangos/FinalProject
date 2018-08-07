@@ -6,6 +6,11 @@ const commentSchema = new Schema({
     ref: 'User',
     required:true
   },
+  hub:{
+    type:Schema.Types.ObjectId,
+    ref: 'Hub',
+    required:true,
+  },
   content:{
     type:String,
     default:'(Empty comment)'

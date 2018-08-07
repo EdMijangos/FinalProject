@@ -32,6 +32,11 @@ export class ServerLinkService {
     .pipe(map((res:Response)=>res.json()))
   }
 
+  newComment(comment){
+    return this.http.post(this.url + 'newComment', comment, {withCredentials:true})
+    .pipe(map((res:Response)=>res.json()))
+  }
+
   getLocalUser(){
     return JSON.parse(localStorage.getItem('user'))
   }
@@ -46,6 +51,11 @@ export class ServerLinkService {
     .pipe(map((res:Response)=>res.json()))
   }
 
+  getAllComments(hubId){
+    return this.http.get(this.url + 'comments/' + hubId)
+    .pipe(map((res:Response)=>res.json()))
+  }
+
   getSingleUser(id){
     return this.http.get(this.url + 'people/' + id)
     .pipe(map((res:Response)=>res.json()))
@@ -53,6 +63,21 @@ export class ServerLinkService {
 
   getSingleHub(id){
     return this.http.get(this.url + 'hubs/' + id)
+    .pipe(map((res:Response)=>res.json()))
+  }
+
+  updateUserHub(id, valueToUpdate){
+    return this.http.put(this.url + 'peopleHub/' + id, {valueToUpdate})
+    .pipe(map((res:Response)=>res.json()))
+  }
+
+  updateUserFriend(id, valueToUpdate){
+    return this.http.put(this.url + 'peopleFriend/' + id, {valueToUpdate})
+    .pipe(map((res:Response)=>res.json()))
+  }
+
+  updateHubParticipants(id, valueToUpdate){
+    return this.http.put(this.url + 'hubParticipant/' + id, {valueToUpdate})
     .pipe(map((res:Response)=>res.json()))
   }
 

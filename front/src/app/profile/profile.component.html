@@ -22,7 +22,8 @@
             <div class="panel panel-default text-left">
               <div class="panel-body text-center">
                 <p>{{user.username}}'s' Friend List</p>
-                <button class="btn btn-primary" *ngIf="localUser">Add to your Friend List</button> <!--Por el momento no hace nada-->
+                <button class="btn btn-primary" *ngIf="localUser && isNotFriend" (click)="addFriend()">Add to your Friend List</button>
+                <span class="label label-success" *ngIf="user && isNotFriend===false">You're already friends with {{user.username}}</span>
               </div>
             </div>
           </div>
@@ -51,7 +52,7 @@
             <p><strong>{{hub.title}}</strong></p>
             <p>{{hub.date}}</p>
             <p>{{hub.category}}</p>
-            <a [routerLink]="['hubs', hub._id]"></a> <button class="btn btn-primary">Info</button>
+            <a [routerLink]="['/hubs', hub._id]"> <button class="btn btn-primary">Info</button></a>
           </div>
         </div>      
       </div>

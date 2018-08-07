@@ -8,9 +8,10 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  id = '';
-  user = {} //el usuario del que se ve se profile
-  localUser:any //el usuario loggead
+  id = ''; //id del usuario del que se ve su profile
+  user = {} //el usuario del que se ve su profile
+  localUser:any //el usuario loggeado
+  isNotFriend:boolean = true
 
   constructor(
     private backService:ServerLinkService,
@@ -30,6 +31,23 @@ export class ProfileComponent implements OnInit {
     this.backService.getSingleUser(this.id)
     .subscribe(user=>{
       this.user = user
+    })
+
+    //checa si ya esta el usuario en tu friend list
+    for (var i = 0; i <= this.localUser.friendList.length; i++){
+      if(this.localUser.friendList[i]._id == this.id) return this.isNotFriend = false;
+    }
+  }
+
+  addFriend(){
+    this.backService.updateUserFriend(this.localUser._id, this.id)
+    .subscribe(user=>{
+      this.localUser = user;
+
+      //update el localStorage user
+      localStorage.removeItem('user');
+      localStorage.setItem('user', JSON.stringify(this.localUser))
+      window.location.reload()
     })
   }
 
