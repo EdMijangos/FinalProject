@@ -19,7 +19,7 @@ export class ServerLinkService {
   }
 
   signUp(signupForm){
-    return this.http.post(this.url + 'signup', signupForm.value)
+    return this.http.post(this.url + 'signup', signupForm)
     .pipe(map((res:Response)=>res.json()))
   }
 

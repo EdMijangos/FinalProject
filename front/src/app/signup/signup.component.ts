@@ -20,9 +20,9 @@ export class SignupComponent implements OnInit {
     hobbies: '',
   }
 
-  getForm(signupForm){
-    signupForm.hobbies = signupForm.hobbies.split(',');
-    this.backService.signUp(signupForm)
+  getForm(form){
+    form.hobbies = form.hobbies.split(',');
+    this.backService.signUp(form)
     .subscribe(user=>{
       this.user = user;
     })

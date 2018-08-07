@@ -8,7 +8,7 @@ section{
   background-size: cover;
 }
 
-form {
+.form {
   width: 30vw;
   height: 65vh;
   padding: 2vh 2vw;
@@ -22,13 +22,13 @@ form {
   box-shadow: 0px 0px 5px 1px black;
 }
 
-form div{
+.form div{
   width: 82%;
   display: flex;
   flex-direction: column;
 }
 
-form input{
+.form input{
   height: 30px;
   border:none;
   padding-left: 5px;
