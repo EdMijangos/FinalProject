@@ -16,7 +16,8 @@ const cors         = require('cors')
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://demo:demo22@ds215502.mlab.com:15502/demo', {useMongoClient: true})
+//'mongodb://demo:demo22@ds215502.mlab.com:15502/demo'
+  .connect('mongodb://localhost:3000', {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
