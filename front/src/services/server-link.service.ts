@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators'
 })
 export class ServerLinkService {
   //http://localhost:3000/
-  url = '/';
+  url = '/api/';
   user = {}
 
   constructor(private http:Http) { }
