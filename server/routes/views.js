@@ -62,6 +62,16 @@ router.put('/peopleFriend/:id', (req,res)=>{
   .catch(err=>res.json(err))
 })
 
+router.put('/peoplePhoto/:id', (req,res)=>{
+  User.findByIdAndUpdate(req.params.id, {photoURL:req.body.valueToUpdate}, {new:true})
+  .populate('hubs')
+  .populate('friendList')
+  .then(user=>{
+    res.json(user)
+  })
+  .catch(err=>res.json(err))
+})
+
 router.post('/newHub', (req,res,next)=>{
   let hub = {}
   Hub.create(req.body)
@@ -128,6 +138,5 @@ router.get('/comments/:hubId', (req,res)=>{
   })
   .catch(err=>res.json(err))
 })
-
 
 module.exports = router;

@@ -1,7 +1,7 @@
 <section>
   <!--Form invisible para el cambio de foto-->
-  <div style="display:none;" id="form">
-    <input type="file" (change)="getPhoto($event)">
+  <div style="display:none;">
+    <input type="file" (change)="getPhoto($event)" id="form">
   </div>
 
   <!-- Primera columna-->
@@ -10,12 +10,12 @@
       <div class="col-sm-3 well">
         <div class="well">
           <p>{{user.username}}</p>
-          <img src="{{user.photoURL}}" class="img-circle" height="65" width="65" alt="Avatar">
+          <img src="{{user.photoURL}}" class="img-circle" height="65" width="65" alt="Avatar" (click)="photoClick()">
         </div>
         <div class="well">
           <p>Interests</p>
           <p>
-            <span *ngFor="let hobby of user.hobbies" class="label label-primary">{{hobby}}</span>
+            <span *ngFor="let hobby of user.hobbies" class="label label-warning">{{hobby}}</span>
           </p>
         </div>  
       </div>
@@ -26,7 +26,7 @@
           <div class="col-sm-12">
             <div class="panel panel-default text-left">
               <div class="panel-body">
-                <p class="text-center">This is your Friend List</p>
+                <h3 class="text-center">This is your Friend List</h3>
               </div>
             </div>
           </div>
@@ -41,6 +41,7 @@
           </div>
           <div class="col-sm-9">
             <div class="well">
+                <p><strong>{{friend.username}}'s Interests:</strong></p>
               <p *ngFor="let hobby of friend.hobbies">{{hobby}}</p>
             </div>
           </div>
@@ -62,6 +63,7 @@
 
     </div>
   </div>
+
 </section>
 
 

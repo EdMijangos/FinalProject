@@ -12,7 +12,7 @@
         <div class="well">
           <p>Category</p>
           <p>
-            <span class="label label-primary">{{hub.category}}</span>
+            <span class="label label-warning">{{hub.category}}</span>
           </p>
         </div>  
       </div>
@@ -26,8 +26,8 @@
                 <h3 class="text-center">{{hub.description}}</h3>
                 <p>Location: {{hub.location}}</p>
                 <p>
-                  <span class="label label-primary">Participants: {{hub.numberParticipants}}</span>
-                  <span class="label label-primary">{{hub.date}}</span>  
+                  <span>Participants: </span><span class="label label-warning">{{hub.numberParticipants}}</span>
+                  <span>Date:</span><span class="label label-warning">{{hub.date}}</span>  
                 </p>
                 <button class="btn button-success" *ngIf="user && isNotParticipant && hubIsFull === false" (click)="joinHub()">Join</button>
                 <span class="label label-success" *ngIf="user && isNotParticipant===false">You're already in this hub</span>

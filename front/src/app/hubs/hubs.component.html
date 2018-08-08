@@ -4,12 +4,12 @@
       <a [routerLink]="[hub._id]">
         <div class="well">
           <h3>{{hub.title}}</h3>
-          <p>{{hub.owner.username}}</p>
+          <p>made by {{hub.owner.username}}</p>
         </div>
         <div class="well">
-          <p><span class="label label-primary">{{hub.category}}</span></p>
-          <p>{{hub.numberParticipants}}</p>
-          <p class="btn btn-success">{{hub.date}}</p>
+          <p> <span>Category: </span><span class="label label-warning">{{hub.category}}</span></p>
+          <p>Participants: <span class="label label-warning">{{hub.numberParticipants}}</span></p>
+          <p>Date: <span class="label label-success">{{hub.date}}</span></p>
         </div>
       </a>
     </div>

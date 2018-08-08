@@ -8,7 +8,8 @@ import { map } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class ServerLinkService {
-  url = '/';
+  //http://localhost:3000/
+  url = 'http://localhost:3000/';
   user = {}
 
   constructor(private http:Http) { }
@@ -73,6 +74,11 @@ export class ServerLinkService {
 
   updateUserFriend(id, valueToUpdate){
     return this.http.put(this.url + 'peopleFriend/' + id, {valueToUpdate})
+    .pipe(map((res:Response)=>res.json()))
+  }
+
+  updateUserPhoto(id, valueToUpdate){
+    return this.http.put(this.url + 'peoplePhoto/' + id, {valueToUpdate})
     .pipe(map((res:Response)=>res.json()))
   }
 

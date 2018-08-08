@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServerLinkService } from '../../services/server-link.service'
+import { FirebaseService} from '../../services/firebase.service'
 
 @Component({
   selector: 'app-my-profile',
@@ -14,6 +15,7 @@ export class MyProfileComponent implements OnInit {
   constructor(
     private router:Router,
     private backService:ServerLinkService,
+    private firebaseService:FirebaseService
   ) { }
 
   ngOnInit() {
@@ -32,8 +34,23 @@ export class MyProfileComponent implements OnInit {
     }
   }
 
-  getPhoto(e){
-    this.photo = e.target.files[0]
+  //para poder cambiar la foto del profile
+  photoClick(){
+    document.getElementById('form').click();
   }
+
+  getPhoto(e){
+    //this.photo = e.target.files[0]
+    this.firebaseService.uploadFile(e.target.files[0])
+      .then(r=>{
+        this.photo = r
+        this.user.photoURL = r
+      })
+
+
+    this.backService.updateUserPhoto(this.user._id, this.user.photoURL)
+    .subscribe(user=>{
+      this.user = user
+    }
 
 }

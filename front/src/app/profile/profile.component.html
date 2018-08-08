@@ -10,7 +10,7 @@
         <div class="well">
           <p>Interests</p>
           <p>
-            <span *ngFor="let hobby of user.hobbies" class="label label-primary">{{hobby}}</span>
+            <span *ngFor="let hobby of user.hobbies" class="label label-warning">{{hobby}}</span>
           </p>
         </div>  
       </div>
@@ -21,7 +21,7 @@
           <div class="col-sm-12">
             <div class="panel panel-default text-left">
               <div class="panel-body text-center">
-                <p>{{user.username}}'s' Friend List</p>
+                <h3>{{user.username}}'s' Friend List</h3>
                 <button class="btn btn-primary" *ngIf="localUser && isNotFriend" (click)="addFriend()">Add to your Friend List</button>
                 <span class="label label-success" *ngIf="user && isNotFriend===false">You're already friends with {{user.username}}</span>
               </div>
@@ -38,6 +38,7 @@
           </div>
           <div class="col-sm-9">
             <div class="well">
+              <p><strong>{{friend.username}}'s Interests:</strong></p>
               <p *ngFor="let hobby of friend.hobbies">{{hobby}}</p>
             </div>
           </div>
