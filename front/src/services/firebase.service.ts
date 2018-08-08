@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase'
 
 //firebase config
+//deberia ir en una variable de entorno
 const config = {
   apiKey: 'AIzaSyDxnwFJkuCaxqxWCuzrDRK-85F50z8zZw0',
   authDomain: 'hubster-a16d8.firebaseapp.com',
@@ -17,7 +18,7 @@ export class FirebaseService {
 
   constructor() { }
 
-  uploadFile(file){ //el name se pasa para que la imagen sustituya a la anterior y no se ocupe espacio demas en el storage
+  uploadFile(file){ //se podria pasar un name para que la imagen sustituya a la anterior y no se ocupe espacio demas en el storage
     const task = firebase.storage().ref('images').child(file.name).put(file)
   
     

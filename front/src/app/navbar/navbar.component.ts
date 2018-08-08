@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
   logout(){
     this.backService.logout();
     this.router.navigate(['']);
-    window.location.reload()
+    this.ngOnInit();
   }
 
 }

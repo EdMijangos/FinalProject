@@ -5,6 +5,7 @@ const Commentario = require('../models/comment') //se le llamo en español porqu
 
 
 //middlewares
+//termine por no usarlos
 function isAuthenticated(req,res,next){
   if(req.isAuthenticated()){
       return next()

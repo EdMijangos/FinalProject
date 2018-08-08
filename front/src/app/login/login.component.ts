@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     .subscribe(user=>{
       localStorage.setItem('user', JSON.stringify(user));
       this.router.navigate(['']);
-      window.location.reload()
+      this.ngOnInit();
       })
     })
   }
