@@ -1,0 +1,17 @@
+<section>
+    <div class="container text-center">    
+      <div class="col-sm-3 well" *ngFor="let hub of hubs">
+        <a [routerLink]="['/hubs', hub._id]">
+          <div class="well">
+            <h3>{{hub.title}}</h3>
+          </div>
+          <div class="well">
+            <p> <span>Category: </span><span class="label label-warning">{{hub.category}}</span></p>
+            <p>Participants: <span class="label label-warning">{{hub.numberParticipants}}</span></p>
+            <p>Date: <span class="label label-success">{{hub.date}}</span></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  

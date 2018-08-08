@@ -1,13 +1,17 @@
 <section>
-  <div class="card">
+  <div class="card form-group">
     <div>
       <p>Email:</p>
-      <input type="text" placeholder="Your email" [(ngModel)]="loginInput.email">
+      <input type="text" placeholder="Your email" [(ngModel)]="loginInput.email" class="form-control">
       <br>
       <p>Password:</p>
-      <input type="password" placeholder="Your password" [(ngModel)]="loginInput.password">
+      <input type="password" placeholder="Your password" [(ngModel)]="loginInput.password" class="form-control">
       <input type="submit" (click)="getInput(loginInput)" id="btn">
     </div>
+    <div class="alert alert-danger" *ngIf="fail">
+      <strong>Wrong email or password!</strong>
+    </div>
+      
   </div>
 </section>
 

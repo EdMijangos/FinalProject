@@ -1,6 +1,5 @@
 section{
   width: (100vw-17px);
-  height: 100vh;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +9,7 @@ section{
 
 .card {
   width: 40vw;
-  height: 85vh;
+  margin-top: 15vh;
   padding: 2vh 2vw;
   background-color: #F7882F;
   color: white;
@@ -43,7 +42,7 @@ section{
 #btn{
   width: 40%;
   margin-top:2vh;
-  padding: 1vh 2vw;
+  padding: 0vh 2vw;
   border: none;
   margin-right: 3vw;
   cursor: pointer;

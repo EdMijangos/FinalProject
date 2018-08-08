@@ -1,22 +1,22 @@
 <section>
-  <div class="card">
+  <div class="card form-group">
     <div>
       <p>Hub title:</p>
-      <input type="text" placeholder="Title" [(ngModel)]="newHub.title">
+      <input type="text" placeholder="Title" [(ngModel)]="newHub.title" class="form-control">
       <br>
       <p>Number of participants:</p>
-      <input type="number" placeholder="Number of people" [(ngModel)]="newHub.numberParticipants">
+      <input type="number" placeholder="Number of people" [(ngModel)]="newHub.numberParticipants" class="form-control">
       <br>
       Category:
-      <input type="text" placeholder="Category" [(ngModel)]="newHub.category">
+      <input type="text" placeholder="Category" [(ngModel)]="newHub.category" class="form-control">
       <br>
       <p>Location:</p>
-      <input type="text" placeholder="Location" [(ngModel)]="newHub.location">
+      <input type="text" placeholder="Location" [(ngModel)]="newHub.location" class="form-control">
       <br>
       <p>Date - leave empty for value "Now":</p>
-      <input type="date" [(ngModel)]="newHub.date">
+      <input type="date" [(ngModel)]="newHub.date" class="form-control">
       <br>
-      <textarea placeholder="Description" cols="30" rows="10" [(ngModel)]="newHub.description"></textarea>
+      <textarea placeholder="Description" cols="30" rows="5" [(ngModel)]="newHub.description" class="form-control"></textarea>
       <br>
       <input type="submit" (click)="makeHub(newHub)" id="btn">
     </div>

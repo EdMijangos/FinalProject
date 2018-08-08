@@ -21,7 +21,7 @@ function isLoggedIn(req,res,next){
   }
 }
 
-
+//lista de usuarios
 router.get('/people', (req,res)=>{
   User.find()
   .then(users=>{
@@ -30,6 +30,7 @@ router.get('/people', (req,res)=>{
   .catch(err=>res.json(err))
 })
 
+//profile de usuario en especifico
 router.get('/people/:id', (req,res)=>{
   User.findById(req.params.id)
   .populate('hubs')
@@ -40,7 +41,7 @@ router.get('/people/:id', (req,res)=>{
   .catch(err=>res.json(err))
 })
 
-//agrega el hub cuando te unes a él
+//agrega el hub al usuario cuando te unes a él
 router.put('/peopleHub/:id', (req,res)=>{
   User.findByIdAndUpdate(req.params.id, {$push:{hubs:req.body.valueToUpdate}}, {new:true})
   .populate('hubs')
@@ -62,6 +63,7 @@ router.put('/peopleFriend/:id', (req,res)=>{
   .catch(err=>res.json(err))
 })
 
+//actualiza tu nueva foto de perfil en la DB
 router.put('/peoplePhoto/:id', (req,res)=>{
   console.log(req.body)
   User.findByIdAndUpdate(req.params.id, req.body, {new:true})
@@ -73,6 +75,7 @@ router.put('/peoplePhoto/:id', (req,res)=>{
   .catch(err=>res.json(err))
 })
 
+//crea un nuevo hub
 router.post('/newHub', (req,res,next)=>{
   let hub = {}
   Hub.create(req.body)
@@ -85,7 +88,7 @@ router.post('/newHub', (req,res,next)=>{
   .catch(err=>res.json(err))
 })
 
-
+//lista de hubs
 router.get('/hubs', (req,res)=>{
   Hub.find()
   .populate('owner')
@@ -95,6 +98,7 @@ router.get('/hubs', (req,res)=>{
   .catch(err=>res.json(err))
 })
 
+//muestra un hub en especifico
 router.get('/hubs/:id', (req,res,next)=>{
   Hub.findById(req.params.id)
   .populate('owner')
@@ -118,6 +122,7 @@ router.put('/hubParticipant/:id', (req,res)=>{
   .catch(err=>res.json(err))
 })
 
+//crea un comentario nuevo y se lo agrega al hub correspondiente
 router.post('/newComment', (req,res,next)=>{
   let comment = {}
   Commentario.create(req.body)
@@ -130,6 +135,7 @@ router.post('/newComment', (req,res,next)=>{
   .catch(err=>res.json(err))
 })
 
+//muestra los comentarios del hub accedido
 router.get('/comments/:hubId', (req,res)=>{
   let hubId = req.params.hubId 
   Commentario.find({hub:hubId})

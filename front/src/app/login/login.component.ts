@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
 
   user:any
 
+  fail:boolean = false;
+
 
   constructor(
     private backService:ServerLinkService,
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
     this.backService.logIn(loginForm)
     .subscribe(user=>{
       this.user = user
+      //if(!this.user) this.fail = true; Checkeo para el feedback error del login. NO funciona
 
     //populates the user and saves it in the localStorage
     this.backService.getSingleUser(this.user._id)

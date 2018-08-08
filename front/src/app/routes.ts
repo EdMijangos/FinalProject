@@ -12,6 +12,7 @@ import { PeopleComponent } from './people/people.component';
 import { HubsComponent } from './hubs/hubs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HubComponent } from './hub/hub.component';
+import { ActiveHubsComponent } from './active-hubs/active-hubs.component';
 
 //paths
 export const routes: Routes = [
@@ -23,6 +24,7 @@ export const routes: Routes = [
   {path:'people', component: PeopleComponent},
   {path:'people/:id', component:ProfileComponent},
   {path:'hubs', component:HubsComponent},
-  {path:'hubs/:id', component:HubComponent}
+  {path:'hubs/:id', component:HubComponent},
+  {path:'myHubs', component:ActiveHubsComponent}
 
 ]

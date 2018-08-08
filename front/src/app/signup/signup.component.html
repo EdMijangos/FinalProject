@@ -1,19 +1,19 @@
 <section>
 
-  <div class="form">
+  <div class="form form-group">
     <div>
       <p>Username:</p>
-      <input type="text" [(ngModel)]="signupForm.username" placeholder="username">
+      <input type="text" [(ngModel)]="signupForm.username" placeholder="username" class="form-control">
       <br>
       <p>Email:</p>
-      <input type="email" placeholder="Tu correo" [(ngModel)]="signupForm.email">
+      <input type="email" placeholder="Tu correo" [(ngModel)]="signupForm.email" class="form-control">
       <br>
       
       <p>Password:</p>
-      <input type="password" placeholder="Tu password" [(ngModel)]="signupForm.password">
+      <input type="password" placeholder="Tu password" [(ngModel)]="signupForm.password" class="form-control">
       <br>
   
-      <input type="password" placeholder="Tu password otra vez" [(ngModel)]="signupForm.password2">
+      <input type="password" placeholder="Tu password otra vez" [(ngModel)]="signupForm.password2" class="form-control">
       <div *ngIf="signupForm.password != signupForm.password2">
         <div>
           Passwords don't match
@@ -21,7 +21,7 @@
       </div>
       <br>
       <p>Hobbies:</p>
-      <input type="text" placeholder="Tus hobbies (separados por commas)" [(ngModel)]="signupForm.hobbies">
+      <input type="text" placeholder="Tus hobbies (separados por commas)" [(ngModel)]="signupForm.hobbies" class="form-control">
       <br>
   
       <input type="submit" id="btn" (click)="getForm(signupForm)">

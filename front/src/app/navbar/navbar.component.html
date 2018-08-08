@@ -1,5 +1,6 @@
 <nav>
   <a [routerLink]="['']"><img src="https://res.cloudinary.com/irontest/image/upload/v1533566943/Hubster/964871c0-41a6-4870-b9f2-e2c34cdfcace.png" alt="spotify logo"></a> 
+  
   <ul *ngIf="!user">
     <li>
       <a [routerLink]="['login']">Log In</a> 
@@ -13,10 +14,21 @@
       <a [routerLink]="['newHub']">New Hub</a> 
     </li>
     <li>
+      <a [routerLink]="['myHubs']">Your Hubs</a> 
+    </li>
+    <li>
       <a [routerLink]="['myProfile']">My Profile</a> 
     </li>
     <li (click)="logout()">
       Log Out 
     </li>
   </ul>
+  <ul>
+      <li>
+        <a [routerLink]="['people']">Discover People</a> 
+      </li>
+      <li>
+        <a [routerLink]="['hubs']">Discover Hubs</a> 
+      </li>
+    </ul>
 </nav>
