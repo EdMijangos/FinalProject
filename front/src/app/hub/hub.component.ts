@@ -81,7 +81,7 @@ export class HubComponent implements OnInit {
       //update el localStorage user
       localStorage.removeItem('user');
       localStorage.setItem('user', JSON.stringify(this.user))
-      this.ngOnInit();
+      window.location.reload()
     })
   }
 

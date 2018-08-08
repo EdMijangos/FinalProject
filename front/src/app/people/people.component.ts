@@ -22,7 +22,6 @@ export class PeopleComponent implements OnInit {
       this.users = users
     })
     
-    console.log(this.nameFilter)
   }
 
 }

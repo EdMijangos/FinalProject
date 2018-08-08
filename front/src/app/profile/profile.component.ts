@@ -47,7 +47,7 @@ export class ProfileComponent implements OnInit {
       //update el localStorage user
       localStorage.removeItem('user');
       localStorage.setItem('user', JSON.stringify(this.localUser))
-      this.ngOnInit()
+      window.location.reload()
     })
   }
 
