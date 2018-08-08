@@ -10,7 +10,7 @@ import { FirebaseService} from '../../services/firebase.service'
 })
 export class MyProfileComponent implements OnInit {
   user:any;
-  photo: any
+  
 
   constructor(
     private router:Router,
@@ -43,14 +43,14 @@ export class MyProfileComponent implements OnInit {
     //this.photo = e.target.files[0]
     this.firebaseService.uploadFile(e.target.files[0])
       .then(r=>{
-        this.photo = r
         this.user.photoURL = r
+    
+
+        this.backService.updateUserPhoto(this.user._id, this.user)
+        .subscribe(user=>{
+          this.user = user;
       })
-
-
-    this.backService.updateUserPhoto(this.user._id, this.user.photoURL)
-    .subscribe(user=>{
-      this.user = user
-    }
+    })
+  }
 
 }

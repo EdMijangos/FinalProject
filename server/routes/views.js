@@ -63,7 +63,8 @@ router.put('/peopleFriend/:id', (req,res)=>{
 })
 
 router.put('/peoplePhoto/:id', (req,res)=>{
-  User.findByIdAndUpdate(req.params.id, {photoURL:req.body.valueToUpdate}, {new:true})
+  console.log(req.body)
+  User.findByIdAndUpdate(req.params.id, req.body, {new:true})
   .populate('hubs')
   .populate('friendList')
   .then(user=>{
